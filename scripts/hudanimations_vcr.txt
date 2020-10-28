@@ -1,0 +1,470 @@
+//===========================================
+//Health Bonus Pulse
+
+event hudHealthBonusPulse
+{
+  animate PlayerStatusHealthValue fGColor buff linear 0.0 0.1
+  runEvent hudHealthBonusPulseLoop 0.0
+}
+
+// call to loop HudHealthBonusPulse
+event HudHealthBonusPulseLoop
+{
+  RunEvent HudHealthBonusPulseLoopLoop 0.0
+}
+
+event HudHealthBonusPulseLoopLoop
+{
+  animate PlayerStatusHealthValue fGColor nuttin flicker 0.3 0.0 0.1
+  animate PlayerStatusHealthValue fGColor buff2 flicker 0.6 0.0 0.1
+  animate PlayerStatusHealthValue fGColor buff flicker 0.7 0.0 0.1
+  animate PlayerStatusHealthValueBuff fGColor buffbig flicker 0.2 0.0 0.1
+  animate PlayerStatusHealthValueBuff fGColor nuttin flicker 0.8 0.0 0.1
+
+  RunEvent HudHealthBonusPulseLoop 0.2
+}
+
+event hudHealthBonusPulseStop
+{
+  stopEvent HudHealthBonusPulse 0.0
+  stopEvent HudHealthBonusPulseLoop 0.0
+  stopEvent HudHealthBonusPulseLoopLoop 0.0
+  animate PlayerStatusHealthValue fGColor base2 linear 0.0 0.0
+  animate PlayerStatusHealthValueBuff fGColor nuttin linear 0.0 0.0
+}
+
+//===========================================
+
+//Health Dying Pulse
+event hudHealthDyingPulse
+{
+  animate PlayerStatusHealthValue fGColor nuttin linear 0.0 0.0
+  animate PlayerStatusHealthValueShadow fGColor nuttin linear 0.0 0.0
+  runEvent hudHealthDyingPulseLoop 0.0
+}
+
+event hudHealthDyingPulseLoop
+{
+  runEvent hudHealthDeadPulseLoop 0.0
+}
+
+event hudHealthDeadPulseLoop
+{
+  animate PlayerStatusHealthValueYellow fGColor nuttin flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueYellow fGColor glitchyellow flicker 0.4 0.0 0.1
+  animate PlayerStatusHealthValueMagenta fGColor nuttin flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta fGColor glitchmagenta flicker 0.4 0.0 0.1
+  animate PlayerStatusHealthValueCyan fGColor nuttin flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueCyan fGColor glitchcyan flicker 0.4 0.0 0.1
+
+  animate PlayerStatusHealthValueYellow Position "0 0" flicker 0.9 0.0 0.1
+  animate PlayerStatusHealthValueYellow Position "1 1" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueYellow Position "1 2" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueYellow Position "2 2" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueYellow Position "2 1" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueYellow Position "1 -1" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueYellow Position "1 -2" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueYellow Position "2 -2" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueYellow Position "2 -1" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueYellow Position "-1 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueYellow Position "-1 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueYellow Position "-2 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueYellow Position "-2 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueYellow Position "-1 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueYellow Position "-1 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueYellow Position "-2 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueYellow Position "-2 -2" flicker 0.1 0.0 0.1
+
+  animate PlayerStatusHealthValueMagenta Position "0 0" flicker 0.9 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "1 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "1 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "2 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "2 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "1 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "1 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "2 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "2 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "-1 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "-1 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "-2 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "-2 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "-1 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "-1 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "-2 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueMagenta Position "-2 -1" flicker 0.1 0.0 0.1
+
+  animate PlayerStatusHealthValueCyan Position "0 0" flicker 0.9 0.0 0.1
+  animate PlayerStatusHealthValueCyan Position "1 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueCyan Position "1 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueCyan Position "2 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueCyan Position "2 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueCyan Position "1 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueCyan Position "1 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueCyan Position "2 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueCyan Position "2 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusHealthValueCyan Position "-1 1" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueCyan Position "-1 2" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueCyan Position "-2 2" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueCyan Position "-2 1" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueCyan Position "-1 -1" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueCyan Position "-1 -2" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueCyan Position "-2 -2" flicker 0.1 0.1 0.1
+  animate PlayerStatusHealthValueCyan Position "-2 -1" flicker 0.1 0.1 0.1
+
+  runEvent hudHealthDyingPulseLoop 0.3
+}
+
+event hudHealthDyingPulseStop
+{
+  stopEvent hudHealthDyingPulse 0.0
+  stopEvent hudHealthDyingPulseLoop 0.0
+  stopEvent hudHealthDeadPulseLoop 0.0
+  animate PlayerStatusHealthValue fGColor base2 linear 0.0 0.0
+  animate PlayerStatusHealthValueShadow fGColor base3 linear 0.0 0.0
+  animate PlayerStatusHealthValueYellow fGColor nuttin linear 0.0 0.0
+  animate PlayerStatusHealthValueMagenta fGColor nuttin linear 0.0 0.0
+  animate PlayerStatusHealthValueCyan fGColor nuttin linear 0.0 0.0
+  animate PlayerStatusHealthValueYellow Position "0 0" linear 0.0 0.0
+  animate PlayerStatusHealthValueMagenta Position "0 0" linear 0.0 0.0
+  animate PlayerStatusHealthValueCyan Position "0 0" linear 0.0 0.0
+}
+
+//===========================================
+
+event hudLowAmmoPulse
+{
+  animate PlayerStatusAmmoValue fGColor nuttin linear 0.0 0.0
+  animate PlayerStatusAmmoValueShadow fGColor nuttin linear 0.0 0.0
+  animate AmmoInClip fGColor nuttin linear 0.0 0.0
+  animate AmmoInReserveShadow fGColor nuttin linear 0.0 0.0
+
+   runEvent hudLowAmmoPulseLoop  0.0
+}
+
+event hudLowAmmoPulseLoop
+{
+  runEvent hudNoAmmoPulseLoop 0.0
+}
+
+event hudNoAmmoPulseLoop
+{
+  animate PlayerStatusAmmoValueYellow fGColor nuttin flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueYellow fGColor glitchyellow flicker 0.4 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta fGColor nuttin flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta fGColor glitchmagenta flicker 0.4 0.0 0.1
+  animate PlayerStatusAmmoValueCyan fGColor nuttin flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueCyan fGColor glitchcyan flicker 0.4 0.0 0.1
+
+  animate AmmoInClip fGColor glitchyellow flicker 0.9 0.0 0.0
+  animate AmmoInClipShadow fGColor glitchmagenta flicker 0.9 0.0 0.0
+  animate AmmoInReserve fGColor glitchcyan flicker 0.9 0.0 0.0
+  animate AmmoInClip fGColor nuttin flicker 0.1 0.0 0.4
+  animate AmmoInClipShadow fGColor nuttin flicker 0.1 0.0 0.4
+  animate AmmoInReserve fGColor nuttin flicker 0.1 0.0 0.4
+
+  animate PlayerStatusAmmoValueYellow Position "0 0" flicker 0.9 0.0 0.1
+  animate PlayerStatusAmmoValueYellow Position "1 1" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueYellow Position "1 2" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueYellow Position "2 2" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueYellow Position "2 1" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueYellow Position "1 -1" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueYellow Position "1 -2" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueYellow Position "2 -2" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueYellow Position "2 -1" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueYellow Position "-1 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueYellow Position "-1 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueYellow Position "-2 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueYellow Position "-2 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueYellow Position "-1 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueYellow Position "-1 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueYellow Position "-2 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueYellow Position "-2 -2" flicker 0.1 0.0 0.1
+
+  animate PlayerStatusAmmoValueMagenta Position "0 0" flicker 0.9 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "1 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "1 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "2 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "2 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "1 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "1 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "2 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "2 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "-1 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "-1 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "-2 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "-2 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "-1 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "-1 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "-2 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueMagenta Position "-2 -1" flicker 0.1 0.0 0.1
+
+  animate PlayerStatusAmmoValueCyan Position "0 0" flicker 0.9 0.0 0.1
+  animate PlayerStatusAmmoValueCyan Position "1 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueCyan Position "1 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueCyan Position "2 2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueCyan Position "2 1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueCyan Position "1 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueCyan Position "1 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueCyan Position "2 -2" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueCyan Position "2 -1" flicker 0.1 0.0 0.1
+  animate PlayerStatusAmmoValueCyan Position "-1 1" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueCyan Position "-1 2" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueCyan Position "-2 2" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueCyan Position "-2 1" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueCyan Position "-1 -1" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueCyan Position "-1 -2" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueCyan Position "-2 -2" flicker 0.1 0.1 0.1
+  animate PlayerStatusAmmoValueCyan Position "-2 -1" flicker 0.1 0.1 0.1
+
+  animate AmmoInClip Position "110 0" flicker 0.9 0.0 0.1
+  animate AmmoInClip Position "111 1" flicker 0.1 0.1 0.1
+  animate AmmoInClip Position "111 2" flicker 0.1 0.1 0.1
+  animate AmmoInClip Position "112 2" flicker 0.1 0.1 0.1
+  animate AmmoInClip Position "112 1" flicker 0.1 0.1 0.1
+  animate AmmoInClip Position "111 -1" flicker 0.1 0.1 0.1
+  animate AmmoInClip Position "111 -2" flicker 0.1 0.1 0.1
+  animate AmmoInClip Position "112 -2" flicker 0.1 0.1 0.1
+  animate AmmoInClip Position "112 -1" flicker 0.1 0.1 0.1
+  animate AmmoInClip Position "-109 1" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "-109 2" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "-108 2" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "-108 2" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "-109 -1" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "-109 -2" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "-108 -1" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "-108 -2" flicker 0.1 0.0 0.1
+
+  animate AmmoInClipShadow Position "0 0" flicker 0.9 0.0 0.1
+  animate AmmoInClipShadow Position "1 1" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "1 2" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "2 2" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "2 1" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "1 -1" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "1 -2" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "2 -2" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "2 -1" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "-1 1" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "-1 2" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "-2 2" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "-2 1" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "-1 -1" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "-1 -2" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "-2 -2" flicker 0.1 0.0 0.1
+  animate AmmoInClipShadow Position "-2 -1" flicker 0.1 0.0 0.1
+
+  animate AmmoInReserve Position "0 0" flicker 0.9 0.0 0.1
+  animate AmmoInReserve Position "1 1" flicker 0.1 0.0 0.1
+  animate AmmoInReserve Position "1 2" flicker 0.1 0.0 0.1
+  animate AmmoInReserve Position "2 2" flicker 0.1 0.0 0.1
+  animate AmmoInReserve Position "2 1" flicker 0.1 0.0 0.1
+  animate AmmoInReserve Position "1 -1" flicker 0.1 0.0 0.1
+  animate AmmoInReserve Position "1 -2" flicker 0.1 0.0 0.1
+  animate AmmoInReserve Position "2 -2" flicker 0.1 0.0 0.1
+  animate AmmoInReserve Position "2 -1" flicker 0.1 0.0 0.1
+  animate AmmoInReserve Position "-1 1" flicker 0.1 0.1 0.1
+  animate AmmoInReserve Position "-1 2" flicker 0.1 0.1 0.1
+  animate AmmoInReserve Position "-2 2" flicker 0.1 0.1 0.1
+  animate AmmoInReserve Position "-2 1" flicker 0.1 0.1 0.1
+  animate AmmoInReserve Position "-1 -1" flicker 0.1 0.1 0.1
+  animate AmmoInReserve Position "-1 -2" flicker 0.1 0.1 0.1
+  animate AmmoInReserve Position "-2 -2" flicker 0.1 0.1 0.1
+  animate AmmoInReserve Position "-2 -1" flicker 0.1 0.1 0.1
+
+
+
+  runEvent hudLowAmmoPulseLoop 0.3
+}
+
+event hudLowAmmoPulseStop
+{
+  stopEvent hudLowAmmoPulse 0.0
+  stopEvent hudLowAmmoPulseLoop 0.0
+  stopEvent hudNoAmmoPulseLoop 0.0
+  animate PlayerStatusAmmoValue fGColor base2 linear 0.0 0.0
+  animate PlayerStatusAmmoValueShadow fGColor base3 linear 0.0 0.0
+  animate PlayerStatusAmmoValueYellow fGColor nuttin linear 0.0 0.0
+  animate PlayerStatusAmmoValueMagenta fGColor nuttin linear 0.0 0.0
+  animate PlayerStatusAmmoValueCyan fGColor nuttin linear 0.0 0.0
+  animate PlayerStatusAmmoValueYellow Position "0 0" linear 0.0 0.0
+  animate PlayerStatusAmmoValueMagenta Position "0 0" linear 0.0 0.0
+  animate PlayerStatusAmmoValueCyan Position "0 0" linear 0.0 0.0
+
+  animate AmmoInClip fGColor base2 linear 0.0 0.0
+  animate AmmoInClipShadow fGColor nuttin linear 0.0 0.0
+  animate AmmoInReserve fGColor nuttin linear 0.0 0.0
+  animate AmmoInReserveShadow fGColor base3 linear 0.0 0.0
+  animate AmmoInClip Position "110 0" linear 0.0 0.0
+  animate AmmoInClipShadow Position "0 0" linear 0.0 0.0
+  animate AmmoInReserve Position "0 0" linear 0.0 0.0
+
+}
+
+//====================================
+// Damage Text
+event DamagedPlayer
+{
+
+}
+
+//====================================
+// Flash the medic charge hud when we have full charge
+
+event HudMedicCharged
+{
+   Animate  ChargeLabel    FgColor     "base2"    Linear 0.0 0.1
+   Animate  ChargeLabel    FgColor     "base03forced"    Linear 0.3 0.4
+
+   Animate  ChargeMeter    FgColor     "base2"    Linear 0.0 0.1
+   Animate  ChargeMeter    FgColor     "base03forced"    Linear 0.3 0.4
+
+   RunEvent HudMedicChargedLoop  0.6
+}
+
+// call to loop HudAmmoBonusPulse
+event HudMedicChargedLoop
+{
+   RunEvent HudMedicCharged 0.0
+}
+
+event HudMedicChargedStop
+{
+   StopEvent HudMedicCharged 0.0
+   StopEvent HudMedicChargedLoop 0.0
+
+   Animate  ChargeLabel    FgColor     "base2"    Linear 0.0 0.0001
+   Animate  ChargeMeter    FgColor     "base2"    Linear 0.0 0.0001
+}
+
+//====================================
+
+event RDPositiveScorePulse
+{
+   Animate Score FgColor   "green"     Linear 0.0 0.0
+   Animate Score FgColor   "yellow"       Linear 0.1 0.2
+
+   Animate Score Position  "3 5"    Deaccel 0.0 0.05
+   Animate Score Position  "3 10"      Accel 0.05 0.2
+
+   Animate ScoreShadow FgColor   "0 0 0 200"    Deaccel 0.0 0.05
+   Animate ScoreShadow FgColor   "0 0 0 255"    Accel 0.1 0.2
+}
+
+event RDNegativeScorePulse    //score a point in pd
+{
+   Animate Score FgColor   "magenta"      Linear 0.0 0.0
+   Animate Score FgColor   "yellow"       Linear 0.1 0.2
+
+   Animate Score Position  "3 5"    Deaccel 0.0 0.05
+   Animate Score Position  "3 10"      Accel 0.05 0.2
+
+   Animate ScoreShadow FgColor   "0 0 0 200"    Deaccel 0.0 0.05
+   Animate ScoreShadow FgColor   "0 0 0 255"    Accel 0.1 0.2
+}
+
+////////////////////////////////////////////////////
+//ActiveTimerBG can't be animated for some reason, this is a backup plan
+//Can't animate in a border
+event ActiveTimerHighlight
+{
+   Animate TimePanelValue bgcolor   base3   Linear 0.0 0.1
+}
+
+event ActiveTimerDim
+{
+   Animate TimePanelValue bgcolor   blank  Linear 0.0 0.1
+}
+
+//=========================================================================
+event WinPanel_CompPos
+{
+   Animate WinPanel ypos 0 Linear 0 0
+}
+
+event WinPanel_NormalPos
+{
+   Animate WinPanel ypos 0 Linear 0 0
+}
+
+//=========================================================================
+
+event MMenu_PlayList_Expand
+{
+   Animate SafeMode           ypos 470 Spline 0 0.4
+   Animate VRBGPanel          ypos 633 Spline 0 0.4
+   Animate VRModeButton       ypos 639 Spline 0 0.4
+   Animate ShowPromoCodesButton  ypos 639 Spline 0 0.4
+
+   Animate PlayListContainer Tall 260   Spline  0.0 0.40
+
+   FireCommand 0 "soundentry Panel.SlideDown"
+}
+
+event MMenu_PlayList_Collapse
+{
+   Animate SafeMode           ypos 210 Spline 0 0.4
+   Animate VRBGPanel          ypos 373 Spline   0 0.4
+   Animate VRModeButton       ypos 379 Spline 0 0.4
+   Animate ShowPromoCodesButton  ypos 379 Spline 0 0.4
+
+   Animate PlayListContainer Tall 0 Spline 0 0.4
+
+   FireCommand 0 "soundentry Panel.SlideUp"
+}
+
+event MMenu_PlayList_Collapse_Immediate
+{
+   Animate VRBGPanel          ypos 373 Spline   0 0
+   Animate VRModeButton       ypos 379 Spline 0 0
+   Animate ShowPromoCodesButton  ypos 379 Spline 0 0
+
+   Animate PlayListContainer Tall 0 Spline 0 0
+}
+
+//Fix for persistent animation changes on respawn
+event HudSnapShotReminderIn
+{
+    RunEvent hudAmmoDyingPulseStop 0.0
+    RunEvent hudAmmoBonusPulseStop 0.0
+    RunEvent hudLowAmmoPulseStop 0.0
+    RunEvent HudMedicChargedStop 0.0
+}
+
+//controls the match hud when players die/respawn
+event TeamStatus_PlayerDead
+{
+   SetVisible DeathPanel  0 0
+   SetVisible SkullPanel  0 0
+   SetVisible respawntime  1 0
+
+   Animate DeathPanel ypos 0 Accel 0 0.2
+   Animate SkullPanel ypos 0 Accel 0 0.2
+   Animate respawntime ypos 0 Accel 0 0.2
+}
+
+event TeamStatus_PlayerAlive
+{
+   Animate DeathPanel ypos 0 Accel 0 0.2
+   Animate SkullPanel ypos 0 Accel 0 0.2
+   Animate respawntime ypos 0 Accel 0 0.2
+
+   SetVisible DeathPanel  0 0.2
+   SetVisible SkullPanel  0 0.2
+   SetVisible respawntime 0 0.2
+}
+
+// chat fix
+event CompetitiveGame_LowerChatWindow
+{
+	Animate HudChat ypos r108 Accel 0 0
+}
+
+event CompetitiveGame_RestoreChatWindow
+{
+	Animate HudChat ypos 275 Accel 0 0
+}
+
+event HudTournament_MoveChatWindow
+{
+	RunEvent CompetitiveGame_LowerChatWindow 0
+	RunEvent CompetitiveGame_RestoreChatWindow 10
+}
