@@ -1137,5 +1137,10 @@ Scheme
          "font" "resource/fonts/Scratch Kit.ttf"
          "name" "Scratch Kit"
       }
+      "13"
+      {
+         "font" "resource/fonts/Teletactile.ttf"
+         "name" "Teletactile"
+      }
    }
 }
