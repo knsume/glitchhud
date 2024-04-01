@@ -225,14 +225,14 @@ event hudNoAmmoPulseLoop
   animate AmmoInClip Position "111 -2" flicker 0.1 0.1 0.1
   animate AmmoInClip Position "112 -2" flicker 0.1 0.1 0.1
   animate AmmoInClip Position "112 -1" flicker 0.1 0.1 0.1
-  animate AmmoInClip Position "-109 1" flicker 0.1 0.0 0.1
-  animate AmmoInClip Position "-109 2" flicker 0.1 0.0 0.1
-  animate AmmoInClip Position "-108 2" flicker 0.1 0.0 0.1
-  animate AmmoInClip Position "-108 2" flicker 0.1 0.0 0.1
-  animate AmmoInClip Position "-109 -1" flicker 0.1 0.0 0.1
-  animate AmmoInClip Position "-109 -2" flicker 0.1 0.0 0.1
-  animate AmmoInClip Position "-108 -1" flicker 0.1 0.0 0.1
-  animate AmmoInClip Position "-108 -2" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "109 1" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "109 2" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "108 2" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "108 2" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "109 -1" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "109 -2" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "108 -1" flicker 0.1 0.0 0.1
+  animate AmmoInClip Position "108 -2" flicker 0.1 0.0 0.1
 
   animate AmmoInClipShadow Position "0 0" flicker 0.9 0.0 0.1
   animate AmmoInClipShadow Position "1 1" flicker 0.1 0.0 0.1
